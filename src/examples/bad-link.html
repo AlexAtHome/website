@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			.button,
+			.hyperlink {
+				appearance: none;
+				margin: 0;
+				padding: 0;
+				border: none;
+				text-decoration: none;
+				color: inherit;
+				background: none;
+				cursor: pointer;
+				font-family: inherit;
+				font-size: 1rem;
+			}
+			.hyperlink::before,
+			.button::before {
+				display: none !important;
+			}
+			.hyperlink {
+				color: #60a5fa;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+			.button {
+				background: #60a5fa;
+				color: #222;
+				padding: 0.25rem 1rem;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<script>
+				function openGoogle() {
+					window.open('https://google.com', '_blank')
+				}
+			</script>
+			<button onclick="openGoogle()" class="button">Open Google</button>
+		</section>
+	</body>
+</html>

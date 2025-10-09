@@ -1,35 +1,32 @@
-import { resolve, join } from 'node:path';
-import { readFileSync } from 'node:fs';
-import markdownIt from 'markdown-it';
-import markdownItEleventyImg from 'markdown-it-eleventy-img';
-import { DateTime } from "luxon";
+import { resolve, join } from 'node:path'
+import { readFileSync } from 'node:fs'
+import markdownIt from 'markdown-it'
+import markdownItEleventyImg from 'markdown-it-eleventy-img'
+import { DateTime } from 'luxon'
 
-import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
-import pluginPWA from '@pkvach/eleventy-plugin-pwa';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import pluginPWA from '@pkvach/eleventy-plugin-pwa'
 
 export default function (config) {
 	// Plugins
 	config.setLiquidOptions({
 		jsTruthy: true,
-	});
+	})
 	config.addPlugin(pluginPWA, { swDest: './_site/sw.js' })
 	config.addPlugin(syntaxHighlight)
 
-	config.addShortcode("bsicon", (name, className) => {
-		const content = readFileSync(resolve('node_modules', 'bootstrap-icons', 'icons', `${name}.svg`), { encoding: 'utf8' });
+	config.addShortcode('bsicon', (name, className) => {
+		const content = readFileSync(resolve('node_modules', 'bootstrap-icons', 'icons', `${name}.svg`), { encoding: 'utf8' })
 		return `<span class="bs-icon ${className ?? ''}" aria-hidden="true">${content}</span>`
 	})
 
-	config.addShortcode("timestamp", (value, format = 'DD') => {
-		const dt =
-			value instanceof Date
-				? DateTime.fromJSDate(value, { zone: "utc" })
-				: DateTime.fromISO(value);
+	config.addShortcode('timestamp', (value, format = 'DD') => {
+		const dt = value instanceof Date ? DateTime.fromJSDate(value, { zone: 'utc' }) : DateTime.fromISO(value)
 
-		const datetime = dt.toFormat("yyyy-LL-dd");
-		const display = dt.toFormat(format);
+		const datetime = dt.toFormat('yyyy-LL-dd')
+		const display = dt.toFormat(format)
 
-		return `<time datetime="${datetime}">${display}</time>`;
+		return `<time datetime="${datetime}">${display}</time>`
 	})
 
 	// Libraries
@@ -79,6 +76,7 @@ export default function (config) {
 	config.addPassthroughCopy('src/images')
 	config.addPassthroughCopy('src/main.js')
 	config.addPassthroughCopy('src/fonts')
+	config.addPassthroughCopy('src/examples')
 
 	// Watch targets
 	config.addWatchTarget('tailwind.config.js')

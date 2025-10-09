@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			.button,
+			.hyperlink {
+				appearance: none;
+				margin: 0;
+				padding: 0;
+				border: none;
+				text-decoration: none;
+				color: inherit;
+				background: none;
+				cursor: pointer;
+				font-family: inherit;
+				font-size: 1rem;
+			}
+			.hyperlink::before,
+			.button::before {
+				display: none !important;
+			}
+			.hyperlink {
+				color: #60a5fa;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+			.button {
+				background: #60a5fa;
+				color: #222;
+				padding: 0.25rem 1rem;
+				border-radius: 4px;
+			}
+
+			section {
+				display: flex;
+				gap: 1rem;
+			}
+		</style>
+		<script>
+			function displayAlert() {
+				const something = prompt('Type something')
+				alert(`You typed "${something}"`)
+			}
+		</script>
+	</head>
+	<body>
+		<section>
+			<div>
+				<a href="https://google.com" target="_blank" class="button">Open Google</a>
+			</div>
+			<div>
+				<button onclick="displayAlert()" class="hyperlink">Display an alert</button>
+			</div>
+		</section>
+	</body>
+</html>
