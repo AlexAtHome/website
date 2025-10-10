@@ -88,6 +88,7 @@ Let's first take a look at how these HTML elements are supposed to be used. Let'
 > *[More about buttons](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button)*
 
 >The **`<a>`** [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) element (or _anchor_ element), with [its `href` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#href), creates a <mark>hyperlink to web pages</mark>, files, email addresses, locations in the same page, or anything else a URL can address.
+>
 >*[More about hyperlinks](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a)*
 
 The difference is pretty clear. There is the look, and then there is the function. In HTML, this is not about how does it _look_ like in a Figma design. This is about semantics, and they do matter. The look can be adjusted with CSS.
