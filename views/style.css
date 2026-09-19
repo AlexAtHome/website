@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist+Pixel&family=Jacquard+24&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Geist+Pixel&family=Jacquard+24&family=VT323&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -7,8 +7,8 @@
 	--default-ring-width: 3px;
 	--default-ring-color: var(--color-blue-500);
 
-	--font-display: "Jacquard 24", serif;
-	--default-font-family: "Geist Pixel", system-ui;
+	--font-display: "Geist Pixel", system-ui;
+	--default-font-family: "VT323", monospace;
 }
 
 :root {
