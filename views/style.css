@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist+Pixel&family=Jacquard+24&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+	--default-ring-width: 3px;
+	--default-ring-color: var(--color-blue-500);
+
+	--font-display: "Jacquard 24", serif;
+	--default-font-family: "Geist Pixel", system-ui;
+}
+
+:root {
+	@apply text-[20px] md:text-[24px] leading-relaxed;
+}
+
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		@apply border-zinc-500 dark:border-zinc-700  transition-colors duration-700;
+	}
+
+	button:not(:disabled),
+	[role="button"]:not(:disabled) {
+		@apply cursor-pointer;
+	}
+
+	body {
+		background-image: url('./assets/topograph.svg');
+		background-repeat: repeat;
+		@apply transition-colors duration-700;
+	}
+}
+
+@utility container {
+	padding-inline: 2rem;
+	margin-inline: auto;
+}
+
+@utility section {
+	@apply py-12 border-y;
+}

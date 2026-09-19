@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Alexander Bolotskov</title>
+		<link rel="stylesheet" href="style.css" />
+		<script>
+			const theme = localStorage.theme ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light')
+			document.documentElement.dataset.theme = theme
+			function toggleTheme() {
+				const currentTheme = localStorage.theme ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light')
+				document.documentElement.dataset.theme = localStorage.theme = currentTheme === 'dark' ? 'light' : 'dark'
+			}
+		</script>
+	</head>
+	<body class="bg-white dark:bg-zinc-950 dark:text-zinc-100 text-zinc-900">
+		<section class="section">
+			<div class="container">
+				<h1 class="text-6xl mb-4 font-display">Alexander Bolotskov</h1>
+				<p>Front-end dev who really likes his job</p>
+			</div>
+		</section>
+	</body>
+</html>

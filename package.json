@@ -1,0 +1,23 @@
+{
+  "name": "website",
+  "version": "8.0.0",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve",
+    "dev:css": "npx @tailwindcss/cli -i ./views/style.css -o ./_site/style.css --watch"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/postcss": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
