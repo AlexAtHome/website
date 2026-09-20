@@ -5,18 +5,18 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "eleventy --serve",
+    "dev": "eleventy --serve --quiet --incremental",
     "dev:css": "npx @tailwindcss/cli -i ./views/style.css -o ./_site/style.css --watch"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@tailwindcss/cli": "^4.3.3"
   },
   "peerDependencies": {
     "typescript": "^7"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
-    "@tailwindcss/cli": "^4.3.3",
     "@tailwindcss/postcss": "^4.3.3",
     "tailwindcss": "^4.3.3"
   }
