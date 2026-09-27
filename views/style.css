@@ -36,6 +36,10 @@
 	body {
 		@apply transition-colors duration-700;
 	}
+
+	h1, h2, h3, h4, h5, h6 {
+		@apply md:text-4xl mb-4 font-display;
+	}
 }
 
 @utility bg-color {
@@ -57,6 +61,15 @@
 	background-size: cover;
 }
 
+@utility bg-parallax-y {
+	animation-name: parallax-y;
+	animation-duration: 1ms; /* Firefox requires this to apply the animation */
+	animation-timeline: scroll(y);
+	animation-timing-function: ease-out;
+	background-size: 100%;
+	animation-composition: add;
+}
+
 @layer components {
 	.header {
 		@apply border-b py-2 px-8 flex flex-row;
@@ -64,5 +77,15 @@
 
 	.footer {
 		@apply mt-auto text-xs border-t;
+	}
+
+}
+
+@keyframes parallax-y {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 0 200px;
 	}
 }
