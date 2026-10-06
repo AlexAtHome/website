@@ -1,0 +1,93 @@
+---
+layout: root.njk
+---
+<section class="section topograph">
+	<div class="container">
+		<h1 class="text-[6.7dvw] md:text-4xl text-purple-700">Alexander Bolotskov</h1>
+		<p class="lowercase">i code things</p>
+	</div>
+</section>
+<section class="section">
+	<div class="container p-0">
+		<div class="grid sm:grid-cols-2 lg:grid-cols-4">
+			<img class="inline-grid lg:aspect-square w-full" src="https://github.com/AlexAtHome.png" alt="" />
+			<div class="inline-grid content-start lg:col-span-2 p-8">
+				<p>I have been in the web development for over 10 years now.</p>
+			</div>
+			<div class="inline-grid sm:grid-cols-2 md:grid-cols-1 topograph aspect-video sm:aspect-auto lg:aspect-square h-full w-full"></div>
+		</div>
+	</div>
+</section>
+<section class="section">
+	<div class="container flex flex-row gap-4 overflow-x-auto scrollbar-none">
+		<figure class="border p-4 flex flex-col shrink-0 gap-2 max-w-xs lowercase">
+			<strong>JSON Formatter</strong>
+			<small>JSON and XML formatting tool. Also allows to encode and decode from base64.</small>
+		</figure>
+		<figure class="border p-4 flex flex-col gap-2 shrink-0 max-w-xs lowercase">
+			<strong>keycap</strong>
+			<small>Keyboard and keypad testing app</small>
+		</figure>
+		<figure class="border p-4 flex flex-col gap-2 shrink-0 max-w-xs lowercase">
+			<strong>speech-code</strong>
+			<small>Soviet style text generator</small>
+		</figure>
+		<figure class="border p-4 flex flex-col gap-2 shrink-0 max-w-xs lowercase">
+			<strong>vscode-fish-text</strong>
+			<small>Soviet style text generator - in vscode</small>
+		</figure>
+	</div>
+</section>
+
+<section class="section topograph py-24 bg-parallax-y">
+	<div class="container border-t">
+		<h2 class="m-0">My posts</h2>
+	</div>
+	<div class="container p-0 border-y">
+		<ol class="grid grid-cols-1 items-start">
+			<li class="flex flex-row flex-wrap col-span-1 gap-x-4 gap-y-2 items-start w-full py-4 px-8 border-b">
+				<a href="/posts/html-buttons-are-confusing/" class="text-xl w-full inline-flex relative items-center hover:underline underline-offset-8" style="view-transition-name: article-html-buttons-are-confusing">When buttons are links and links are buttons</a>
+				<span class="text-sm text-slate-600 dark:text-slate-300">
+					Posted at <time datetime="2025-10-09">Oct 9, 2025</time>
+				</span>
+				<span class="text-sm bg-orange-400 text-black px-2">html</span>
+			</li>
+			<li class="flex flex-row flex-wrap col-span-1 gap-x-4 gap-y-2 items-start w-full py-4 px-8 border-b">
+				<a href="/posts/sudo-prompt/" class="text-xl w-full inline-flex relative items-center hover:underline underline-offset-8" style="view-transition-name: article-sudo-prompt">How to change the sudo password prompt</a>
+				<span class="text-sm text-slate-600 dark:text-slate-300">
+					Posted at <time datetime="2024-01-11">Jan 11, 2024</time>
+				</span>
+				<span class="text-sm bg-amber-400 text-black px-2">linux</span>
+			</li>
+			<li class="flex flex-row flex-wrap col-span-1 gap-x-4 gap-y-2 items-start w-full py-4 px-8 border-b">
+				<a href="/posts/dotfiles-bare-repo/" class="text-xl w-full inline-flex relative items-center hover:underline underline-offset-8" style="view-transition-name: article-dotfiles-bare-repo">Store and manage dotfile configs in a bare repository</a>
+				<span class="text-sm text-slate-600 dark:text-slate-300">
+					Posted at <time datetime="2023-07-22">Jul 22, 2023</time>
+				</span>
+				<span class="text-sm bg-purple-400 text-black px-2">productivity</span>
+			</li>
+			<li class="flex flex-row flex-wrap col-span-1 gap-x-4 gap-y-2 items-start w-full py-4 px-8 border-b">
+				<a href="/posts/functional-guards-unit-test/" class="text-xl w-full inline-flex relative items-center hover:underline underline-offset-8" style="view-transition-name: article-functional-guards-unit-test">Unit-testing functional guards in Angular</a>
+				<span class="text-sm text-slate-600 dark:text-slate-300">
+					Posted at <time datetime="2023-07-05">Jul 5, 2023</time>
+				</span>
+				<span class="text-sm bg-green-400 text-black px-2">frontend</span>
+			</li>
+			<li class="flex flex-row flex-wrap col-span-1 gap-x-4 gap-y-2 items-start w-full py-4 px-8 border-b">
+				<a href="/posts/trust-root-certificates/" class="text-xl w-full inline-flex relative items-center hover:underline underline-offset-8" style="view-transition-name: article-trust-root-certificates">How to mark root certificates as trusted</a>
+				<span class="text-sm text-slate-600 dark:text-slate-300">
+					Posted at <time datetime="2023-03-24">Mar 24, 2023</time>
+				</span>
+				<span class="text-sm bg-blue-400 text-black px-2">macos</span>
+			</li>
+			<a href="/posts/" class="inline-flex gap-2 items-center link w-auto py-4 px-8">
+				More posts
+				<span class="bs-icon " aria-hidden="true">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
+					</svg>
+				</span>
+			</a>
+		</ol>
+	</div>
+</section>

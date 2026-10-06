@@ -1,0 +1,21 @@
+---
+layout: root.njk
+title: Posts | Alexander Bolotskov
+---
+<section class="section">
+	<div class="container">
+		<h1>My posts</h1>
+	</div>
+</section>
+<section class="section">
+	<div class="container grid grid-cols-2 p-0">
+		{% for _ in [0,0,0,0,0] %}
+			<div class="p-4 border relative">
+				What
+				<a class="before:flex absolute before:inset-0 bg-red-200/50" href="/posts/example/">
+					<span class="sr-only">Read more</span>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+</section>

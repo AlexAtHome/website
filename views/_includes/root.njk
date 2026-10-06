@@ -1,0 +1,42 @@
+---
+title: Alexander Bolotskov
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{{ title }}</title>
+		<base href="/">
+		<link rel="stylesheet" href="/style.css" />
+		<script>
+			const theme = localStorage.theme ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light')
+			document.documentElement.dataset.theme = theme
+			function toggleTheme() {
+				const currentTheme = localStorage.theme ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light')
+				document.documentElement.dataset.theme = localStorage.theme = currentTheme === 'dark' ? 'light' : 'dark'
+			}
+		</script>
+	</head>
+	<body class="bg-color dark:text-zinc-100 text-zinc-900 flex flex-col min-h-screen">
+		<header class="header justify-between sticky top-0 bg-color">
+			<menu class="lowercase flex gap-8">
+				<li><a href="/">Front Page</a></li>
+				<li><a href="/posts">Blog</a></li>
+				<li><a href="/tools">Tools</a></li>
+			</menu>
+			<menu class="lowercase flex gap-8">
+				<li><button class="lowercase" onclick="toggleTheme()">Toggle theme</button></li>
+			</menu>
+		</header>
+		{{ content | safe }}
+		<footer class="footer p-4">
+			<p><span id="year">2026</span> &copy; Carefully crafted using <a target="_blank" href="https://11ty.dev">11ty</a></p>
+		</footer>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				document.getElementById('year').textContent = new Date().getFullYear();
+			})
+		</script>
+	</body>
+</html>
