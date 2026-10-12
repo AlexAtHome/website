@@ -1,4 +1,8 @@
-# An example post
+---
+title: An example post!
+tags: post, html
+date: 2021-11-09
+---
 
 Here we set an example of a **post**.
 

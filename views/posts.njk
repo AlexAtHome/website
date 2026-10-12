@@ -1,21 +1,35 @@
 ---
 layout: root.njk
 title: Posts | Alexander Bolotskov
+eleventyImport:
+  collections: ["post"]
 ---
-<section class="section">
+<section class="section topograph">
 	<div class="container">
-		<h1>My posts</h1>
+		<h1 style="view-transition-name: page-header-my-posts">My posts</h1>
 	</div>
 </section>
 <section class="section">
-	<div class="container grid grid-cols-2 p-0">
-		{% for _ in [0,0,0,0,0] %}
-			<div class="p-4 border relative">
-				What
-				<a class="before:flex absolute before:inset-0 bg-red-200/50" href="/posts/example/">
-					<span class="sr-only">Read more</span>
+	<div class="container grid grid-cols-2 p-0" role="list">
+		{%- for post in collections.post -%}
+			<div class="p-4 border relative gap-y-4" role="listitem" aria-label="{{ post.data.title }}">
+				<a class="before:absolute before:inset-0 before:z-10" href="{{ post.url }}">
+					{{ post.data.title }}
 				</a>
+				<div class="flex gap-4">
+					<span>
+						<span class="sr-only">Posted at </span>
+						<time datetime="{{ post.data.date }}"></time>
+					</span>
+					<ul class="inline-flex gap-4">
+						{%- for tag in post.data.tags -%}
+							{% if tag != "post" %}
+								<li class="tag-{{ tag | trim }}">{{ tag | trim }}</li>
+							{% endif %}
+						{%- endfor -%}
+					</ul>
+				</div>
 			</div>
-		{% endfor %}
+		{%- endfor -%}
 	</div>
 </section>

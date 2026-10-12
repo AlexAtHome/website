@@ -1,9 +1,13 @@
 ---
 layout: root.njk
 ---
-
-<section class="section">
+<header class="section topograph">
 	<div class="container">
+		<h1>{{ title }}</h1>
+	</div>
+</header>
+<section class="section">
+	<div class="container border-0">
 		{{ content | safe }}
 	</div>
 </section>
