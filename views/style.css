@@ -87,6 +87,11 @@
 	.tag-html {
 		@apply bg-orange-400 text-black;
 	}
+
+	input[type=checkbox][switch] {
+		@apply bg-color w-8 h-4 border-2 inline-flex self-center dark:border-white relative before:inline-block before:bg-black before:absolute before:top-0.5 before:left-0.5 before:bottom-0.5 before:w-4 checked:before:left-auto checked:before:right-0.5 checked:before:bg-purple-600;
+		appearance: none;
+	}
 }
 
 @keyframes parallax-y {

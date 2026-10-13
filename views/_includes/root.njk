@@ -10,23 +10,27 @@ title: Alexander Bolotskov
 		<base href="/">
 		<link rel="stylesheet" href="/style.css" />
 		<script>
-			const theme = localStorage.theme ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light')
-			document.documentElement.dataset.theme = theme
-			function toggleTheme() {
-				const currentTheme = localStorage.theme ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light')
-				document.documentElement.dataset.theme = localStorage.theme = currentTheme === 'dark' ? 'light' : 'dark'
+			const getCurrentTheme = () => localStorage.theme ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light')
+			document.documentElement.dataset.theme = getCurrentTheme()
+			const toggleTheme = () => {
+				const currentTheme = getCurrentTheme()
+				const isDark = localStorage.theme = currentTheme === 'dark'
+				document.documentElement.dataset.theme = isDark ? 'light' : 'dark'
+				const themeSwitcher = document.getElementById('theme-switch')
+				themeSwitcher.checked = isDark
 			}
 		</script>
 	</head>
 	<body class="bg-color dark:text-zinc-100 text-zinc-900 flex flex-col min-h-screen">
 		<header class="header justify-between sticky top-0 bg-color">
-			<menu class="lowercase flex gap-8">
+			<menu class="lowercase flex gap-8 items-center">
 				<li><a href="/">Front Page</a></li>
 				<li><a href="/posts">Blog</a></li>
 				<li><a href="/tools">Tools</a></li>
 			</menu>
-			<menu class="lowercase flex gap-8">
+			<menu class="lowercase flex gap-8 items-center">
 				<li><button class="lowercase" onclick="toggleTheme()">Toggle theme</button></li>
+				<li class="inline-flex"><input type="checkbox" switch id="theme-switch" onclick="toggleTheme()"></li>
 			</menu>
 		</header>
 		{{ content | safe }}
